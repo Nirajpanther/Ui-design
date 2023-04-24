@@ -1,0 +1,46 @@
+AJAX :- function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("demo").innerHTML = this.responseText;
+            }
+            xhttp.open("GET", "https://5ad9-49-36-83-38.ngrok.io/api/student");
+            xhttp.setRequestHeader("Authorization", "Bearer 1364|UlxF12YEzXvslB4AdhGR3IGlE1anIKQhelmHNJgj");
+            xhttp.send();
+        }
+FETCH :- fetch('https://5ad9-49-36-83-38.ngrok.io/api/student', {
+            method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json',
+                "Authorization", "Bearer 1364|UlxF12YEzXvslB4AdhGR3IGlE1anIKQhelmHNJgj"
+                },
+        })
+        .then(res => res.json())
+        .then(console.log);
+
+# To get Students
+
+api :- https://5ad9-49-36-83-38.ngrok.io/api/student
+method :- GET
+
+# To create Students
+
+api :- https://5ad9-49-36-83-38.ngrok.io/api/student/add
+method :- POST
+payload :- https://i.imgur.com/ExOoGXs.png
+
+# To update Students
+
+api :- https://5ad9-49-36-83-38.ngrok.io/api/student/update/{student_id}
+method :- POST
+payload :- https://i.imgur.com/KRzX7QL.png
+
+
+# To get single Students (fill the form the click students details in form)
+
+api :- https://5ad9-49-36-83-38.ngrok.io/api/student/edit/{student_id}
+method :- GET
+
+# To delete Student
+
+api :- https://5ad9-49-36-83-38.ngrok.io/api/student/delete/{student_id}
+method :- DELETE

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+
+<body>
+    <h1>A</h1>
+    <p id="demo">Fetch a file to change this text.</p>
+    <script>
+
+        // ./  => from current file location
+        // ../ => one step out from current file location
+        // /   => insider the directory (Folder)(live url location)
+
+        let file = "./fetch_info.txt";
+        fetch(file)
+
+            .then(a => a.text())
+
+            .then(a => console.log("------------------", a))
+            // .then(a => console.log("------------------", a.text()))
+
+            // .then(b => console.log(b));
+
+
+        /* getText("fetch_info.txt");
+        async function getText(file) {
+            let x = await fetch(file);
+            console.log("-------------------", x);
+
+            let y = await x.text()
+            console.log("-------------------", y);
+
+            document.getElementById("demo").innerHTML = y;
+        } */
+
+        // function loadDoc() {
+        //     const xhttp = new XMLHttpRequest();
+        //     xhttp.onload = function() {
+        //         console.log("this.responseText --->", this.responseText)
+        //         // document.getElementById("demo").innerHTML = this.responseText;
+        //     }
+        //     xhttp.open("GET", file);
+        //     // xhttp.setRequestHeader("Authorization", "Bearer 1364|UlxF12YEzXvslB4AdhGR3IGlE1anIKQhelmHNJgj");
+        //     xhttp.send();
+        // }
+        // loadDoc();
+    </script>
+</body>
+
+</html>
